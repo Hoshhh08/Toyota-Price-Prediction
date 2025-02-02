@@ -14,8 +14,25 @@ with open("scaler.pkl",'rb') as scaler_file:
 # Streamlit UI Setup
 st.set_page_config(page_title="Vehicle Price Predictor", layout="centered")
 
+# Custom CSS for background image
+background_image_url = "https://live.staticflickr.com/7407/16457676315_d320715422_b.jpg"  # Replace with your image URL
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background: url({background_image_url});
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("🚗 Toyota Vehicle Price App")
-st.markdown("### ← Enter Vehicle details below to get a price estimate.")
+st.markdown("### ← Enter Vehicle details to get a price estimate.")
 
 # Sidebar for input features
 st.sidebar.header("Vehicle Features")
