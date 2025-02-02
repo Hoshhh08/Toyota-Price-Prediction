@@ -52,8 +52,15 @@ input_features_df = pd.DataFrame(input_features, columns=column_headers)
 # Prediction Button
 if st.sidebar.button("Predict Price"):
     try:
+        # Scale the input using the saved scaler
+        scaled_input = scaler.transform(input_features)
+
         # Make prediction
-        predicted_price = model.predict(input_features)[0]
+        predicted_price = model.predict(scaled_input)[0]
+
+        # Ensure non-negative price
+        predicted_price = max(0, predicted_price)
+
         st.success(f"🚘 Estimated Car Price: **€{predicted_price:,.2f}**")
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
