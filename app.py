@@ -42,7 +42,7 @@ fuel_type = st.sidebar.selectbox("Fuel Type", ["Petrol", "CNG"])
 automatic = st.sidebar.selectbox("Automatic Transmission?", ["No", "Yes"])
 cc = st.sidebar.number_input("Engine Capacity (cc)", min_value=1300, max_value=2000, value=1500)
 doors = st.sidebar.slider("Number of Doors", 2, 5, 4)
-gears = st.sidebar.slider("Number of Gears", 3, 6, 5, 4)
+gears = st.sidebar.slider("Number of Gears", 3, 6, 5, 1)
 weight = st.sidebar.number_input("Weight (kg)", min_value=1000, max_value=1700, value=1200)
 
 # Map "Yes" and "No" to 1 and 0
