@@ -52,8 +52,8 @@ automatic = 1 if automatic == "Yes" else 0
 fuel_type_petrol = 1 if fuel_type == "Petrol" else 0
 fuel_type_cng = 1 if fuel_type == "CNG" else 0
 
-# Prepare input features (this should have 12 features)
-input_features = np.array([[age, km, fuel_type_petrol, fuel_type_cng, automatic, cc, doors, gears, weight]])
+# Prepare input features in the correct order
+input_features = np.array([[age, km, automatic, cc, doors, gears, weight, fuel_type_cng, fuel_type_petrol]])
 
 # Prepare column headers
 column_headers = [
